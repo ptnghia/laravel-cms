@@ -1,0 +1,52 @@
+{
+    "name": "default",
+    "display_name": "Default Theme",
+    "description": "Clean and modern default theme for Laravel CMS",
+    "version": "1.0.0",
+    "author": "Laravel CMS Team",
+    "author_url": "https://laravel-cms.com",
+    "screenshot": "/themes/default/screenshot.png",
+    "tags": ["responsive", "modern", "clean"],
+    "supports": {
+        "menus": true,
+        "widgets": true,
+        "custom_header": true,
+        "custom_background": true,
+        "post_thumbnails": true,
+        "custom_logo": true
+    },
+    "customization": {
+        "colors": {
+            "primary": "#3B82F6",
+            "secondary": "#64748B",
+            "accent": "#F59E0B",
+            "background": "#FFFFFF",
+            "text": "#1F2937",
+            "link": "#3B82F6"
+        },
+        "typography": {
+            "font_family": "Inter, sans-serif",
+            "font_size": "16px",
+            "line_height": "1.6",
+            "heading_font": "Inter, sans-serif"
+        },
+        "layout": {
+            "container_width": "1200px",
+            "sidebar_position": "right",
+            "header_style": "default",
+            "footer_style": "default"
+        }
+    },
+    "menu_locations": {
+        "header": "Header Menu",
+        "footer": "Footer Menu",
+        "sidebar": "Sidebar Menu"
+    },
+    "widget_areas": {
+        "sidebar": "Sidebar",
+        "footer-1": "Footer Column 1",
+        "footer-2": "Footer Column 2",
+        "footer-3": "Footer Column 3",
+        "footer-4": "Footer Column 4"
+    }
+}
