@@ -2,151 +2,284 @@
 @import "tailwindcss/utilities";
 
 /* TailAdmin Custom Styles */
-@layer base {
-    body {
-        @apply font-sans antialiased;
-    }
+body {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
-    html {
-        scroll-behavior: smooth;
+html {
+    scroll-behavior: smooth;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar-header {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.dark .sidebar-header {
+    border-bottom: 1px solid #374151;
+}
+
+/* Custom Scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Form Styles */
+.form-input {
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 1px solid #d1d5db;
+    background-color: white;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    color: #111827;
+}
+
+.form-input:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 0 1px #3b82f6;
+}
+
+.form-select {
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 1px solid #d1d5db;
+    background-color: white;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    color: #111827;
+}
+
+.form-select:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 0 1px #3b82f6;
+}
+
+.form-textarea {
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 1px solid #d1d5db;
+    background-color: white;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    color: #111827;
+    resize: vertical;
+}
+
+.form-textarea:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 0 1px #3b82f6;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.375rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.btn-primary {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+}
+
+.btn-secondary {
+    background-color: #6b7280;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #4b5563;
+}
+
+.btn-success {
+    background-color: #10b981;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #059669;
+}
+
+.btn-danger {
+    background-color: #ef4444;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #dc2626;
+}
+
+.btn-warning {
+    background-color: #f59e0b;
+    color: white;
+}
+
+.btn-warning:hover {
+    background-color: #d97706;
+}
+
+/* Card Styles */
+.card {
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.dark .card {
+    border-color: #374151;
+    background-color: #111827;
+}
+
+.card-header {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 1rem 1.5rem;
+}
+
+.dark .card-header {
+    border-bottom-color: #374151;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-footer {
+    border-top: 1px solid #e5e7eb;
+    padding: 1rem 1.5rem;
+}
+
+.dark .card-footer {
+    border-top-color: #374151;
+}
+
+/* Table Styles */
+.table {
+    width: 100%;
+    text-align: left;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.dark .table {
+    color: #9ca3af;
+}
+
+.table thead {
+    background-color: #f9fafb;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #374151;
+}
+
+.dark .table thead {
+    background-color: #374151;
+    color: #9ca3af;
+}
+
+.table th {
+    padding: 0.75rem 1.5rem;
+}
+
+.table td {
+    padding: 1rem 1.5rem;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+    background-color: white;
+}
+
+.dark .table tbody tr {
+    border-bottom-color: #374151;
+    background-color: #1f2937;
+}
+
+.table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+.dark .table tbody tr:hover {
+    background-color: #4b5563;
+}
+
+/* Text Utilities */
+.text-title-xxl {
+    font-size: 44px;
+    line-height: 55px;
+}
+
+.text-title-xl {
+    font-size: 36px;
+    line-height: 45px;
+}
+
+.text-title-lg {
+    font-size: 28px;
+    line-height: 35px;
+}
+
+.text-title-md {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.text-title-sm {
+    font-size: 20px;
+    line-height: 26px;
+}
+
+/* Animation Utilities */
+.animate-spin-slow {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }
 
-@layer components {
-    /* Sidebar Styles */
-    .sidebar {
-        transition: all 0.3s ease-in-out;
-    }
-
-    .sidebar-header {
-        @apply border-b border-gray-200 dark:border-gray-800;
-    }
-
-    /* Custom Scrollbar */
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
-
-    .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-
-    /* Form Styles */
-    .form-input {
-        @apply w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500 dark:focus:border-blue-400;
-    }
-
-    .form-select {
-        @apply w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-blue-400;
-    }
-
-    .form-textarea {
-        @apply w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500 dark:focus:border-blue-400;
-    }
-
-    /* Button Styles */
-    .btn {
-        @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
-    }
-
-    .btn-primary {
-        @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500;
-    }
-
-    .btn-secondary {
-        @apply bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500;
-    }
-
-    .btn-success {
-        @apply bg-green-600 text-white hover:bg-green-700 focus:ring-green-500;
-    }
-
-    .btn-danger {
-        @apply bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
-    }
-
-    .btn-warning {
-        @apply bg-yellow-600 text-white hover:bg-yellow-700 focus:ring-yellow-500;
-    }
-
-    /* Card Styles */
-    .card {
-        @apply rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900;
-    }
-
-    .card-header {
-        @apply border-b border-gray-200 px-6 py-4 dark:border-gray-800;
-    }
-
-    .card-body {
-        @apply p-6;
-    }
-
-    .card-footer {
-        @apply border-t border-gray-200 px-6 py-4 dark:border-gray-800;
-    }
-
-    /* Table Styles */
-    .table {
-        @apply w-full text-left text-sm text-gray-500 dark:text-gray-400;
-    }
-
-    .table thead {
-        @apply bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400;
-    }
-
-    .table th {
-        @apply px-6 py-3;
-    }
-
-    .table td {
-        @apply px-6 py-4;
-    }
-
-    .table tbody tr {
-        @apply border-b bg-white dark:border-gray-700 dark:bg-gray-800;
-    }
-
-    .table tbody tr:hover {
-        @apply bg-gray-50 dark:bg-gray-600;
-    }
-}
-
-@layer utilities {
-    /* Text Utilities */
-    .text-title-xxl {
-        font-size: 44px;
-        line-height: 55px;
-    }
-
-    .text-title-xl {
-        font-size: 36px;
-        line-height: 45px;
-    }
-
-    .text-title-lg {
-        font-size: 28px;
-        line-height: 35px;
-    }
-
-    .text-title-md {
-        font-size: 24px;
-        line-height: 30px;
-    }
-
-    .text-title-sm {
-        font-size: 20px;
-        line-height: 26px;
-    }
-
-    /* Animation Utilities */
-    .animate-spin-slow {
-        animation: spin 3s linear infinite;
-    }
-
-    /* Dark mode utilities */
-    .dark-mode-toggle {
-        transition: all 0.3s ease;
-    }
+/* Dark mode utilities */
+.dark-mode-toggle {
+    transition: all 0.3s ease;
 }

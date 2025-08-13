@@ -22,12 +22,48 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Test route without auth
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/test', function () {
+        return 'Admin routes working!';
+    })->name('test');
+
+    Route::get('/demo', function () {
+        // Mock data for demo
+        $stats = [
+            'total_posts' => 25,
+            'total_pages' => 8,
+            'total_users' => 12,
+            'total_media' => 156,
+        ];
+
+        $recent_activity = [
+            [
+                'type' => 'post',
+                'title' => 'Welcome to Laravel CMS',
+                'author' => 'Admin User',
+                'status' => 'published',
+                'date' => 'Aug 13, 2025',
+            ],
+            [
+                'type' => 'page',
+                'title' => 'About Us',
+                'author' => 'Admin User',
+                'status' => 'draft',
+                'date' => 'Aug 12, 2025',
+            ],
+        ];
+
+        return view('admin.dashboard', compact('stats', 'recent_activity'));
+    })->name('demo');
+});
+
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
-    
+
     // Dashboard
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
-    
+
     // Dashboard API endpoints
     Route::get('/api/stats', [DashboardController::class, 'stats'])->name('api.stats');
     Route::get('/api/recent-activity', [DashboardController::class, 'recentActivity'])->name('api.recent-activity');
@@ -92,26 +128,26 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
 
     // API Routes for AJAX requests
     Route::prefix('api')->name('api.')->group(function () {
-        
+
         // Search endpoints
         Route::get('/search/posts', [PostController::class, 'search'])->name('search.posts');
         Route::get('/search/pages', [PageController::class, 'search'])->name('search.pages');
         Route::get('/search/users', [UserController::class, 'search'])->name('search.users');
         Route::get('/search/media', [MediaController::class, 'search'])->name('search.media');
-        
+
         // Quick actions
         Route::post('/quick/post', [PostController::class, 'quickCreate'])->name('quick.post');
         Route::post('/quick/page', [PageController::class, 'quickCreate'])->name('quick.page');
-        
+
         // Auto-save endpoints
         Route::post('/autosave/post/{post?}', [PostController::class, 'autosave'])->name('autosave.post');
         Route::post('/autosave/page/{page?}', [PageController::class, 'autosave'])->name('autosave.page');
-        
+
         // Media operations
         Route::post('/media/folder', [MediaController::class, 'createFolder'])->name('media.folder');
         Route::patch('/media/{media}/move', [MediaController::class, 'move'])->name('media.move');
         Route::patch('/media/{media}/rename', [MediaController::class, 'rename'])->name('media.rename');
-        
+
         // Category/Tag operations
         Route::post('/categories/quick', [CategoryController::class, 'quickCreate'])->name('categories.quick');
         Route::post('/tags/quick', [TagController::class, 'quickCreate'])->name('tags.quick');
