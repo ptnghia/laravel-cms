@@ -285,8 +285,8 @@ Dự án này được phân phối dưới [MIT License](LICENSE).
 ## 🆘 Support
 
 - **Documentation**: [docs/](docs/)
-- **Issues**: [GitHub Issues](https://github.com/your-username/laravel-cms/issues)
-- **Email**: admin@laravel-cms.com
+- **Issues**: [GitHub Issues](https://github.com/ptnghia/laravel-cms/issues)
+- **Email**: ptnghia.dev@gmail.comß
 
 ---
 
