@@ -213,7 +213,9 @@
                     </span>
 
                     <span class="h-12 w-12 rounded-full">
-                        <img class="h-12 w-12 rounded-full object-cover" src="{{ auth()->user()->avatar ?? asset('admin/images/user/user-01.png') }}" alt="User" />
+                        <div class="h-12 w-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-medium">
+                            {{ substr(auth()->user()->name ?? 'A', 0, 1) }}
+                        </div>
                     </span>
 
                     <svg

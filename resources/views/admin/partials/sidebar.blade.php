@@ -39,7 +39,7 @@
 
     <div class="flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar">
         <!-- Sidebar Menu -->
-        <nav x-data="{selected: $persist('{{ request()->route()->getName() ?? 'dashboard' }}')}">
+        <nav x-data="{selected: $persist('{{ request()->route()->getName() ?? 'admin.demo' }}')}">
             <!-- Menu Group -->
             <div>
                 <h3 class="mb-4 text-xs uppercase leading-[20px] text-gray-400">

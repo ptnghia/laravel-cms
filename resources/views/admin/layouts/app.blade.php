@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
+
     <title>@yield('title', 'Admin Dashboard') | {{ config('app.name', 'Laravel CMS') }}</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('admin/images/favicon.ico') }}" type="image/x-icon">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    
+
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
-<body 
-    x-data="{ 
-        page: '{{ $page ?? 'dashboard' }}', 
-        loaded: true, 
-        darkMode: false, 
-        stickyMenu: false, 
-        sidebarToggle: false, 
-        scrollTop: false 
+<body
+    x-data="{
+        page: '{{ $page ?? 'dashboard' }}',
+        loaded: true,
+        darkMode: false,
+        stickyMenu: false,
+        sidebarToggle: false,
+        scrollTop: false
     }"
     x-init="
         darkMode = JSON.parse(localStorage.getItem('darkMode'));
@@ -36,8 +36,8 @@
     class="bg-gray-50"
 >
     <!-- Preloader -->
-    <div 
-        x-show="!loaded" 
+    <div
+        x-show="!loaded"
         x-transition:leave="transition ease-in duration-300"
         x-transition:leave-start="opacity-100"
         x-transition:leave-end="opacity-0"
@@ -58,8 +58,8 @@
         <!-- Content Area -->
         <div class="relative flex flex-col flex-1 overflow-x-hidden overflow-y-auto">
             <!-- Mobile Overlay -->
-            <div 
-                x-show="sidebarToggle" 
+            <div
+                x-show="sidebarToggle"
                 x-transition:enter="transition-opacity ease-linear duration-300"
                 x-transition:enter-start="opacity-0"
                 x-transition:enter-end="opacity-100"
@@ -84,7 +84,7 @@
                             {{ $pageTitle }}
                         </h1>
                         @endif
-                        
+
                         @if(isset($breadcrumbs))
                         <nav class="flex mt-2" aria-label="Breadcrumb">
                             <ol class="inline-flex items-center space-x-1 md:space-x-3">
@@ -147,7 +147,8 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script defer src="https://unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @stack('scripts')
 </body>
 </html>
