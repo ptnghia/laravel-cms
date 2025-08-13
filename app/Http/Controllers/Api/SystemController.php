@@ -17,6 +17,25 @@ class SystemController extends Controller
 {
     use ApiResponseTrait;
 
+
+
+    /**
+     * Get system status
+     */
+    public function status(): JsonResponse
+    {
+        return response()->json([
+            'success' => true,
+            'status' => 'online',
+            'maintenance_mode' => \App\Http\Middleware\MaintenanceMode::isActive(),
+            'api_version' => app()->bound('api.version') ? app('api.version') : 'v1',
+            'supported_versions' => ['v1', 'v2'],
+            'timestamp' => now()->toISOString(),
+            'server_time' => now()->format('Y-m-d H:i:s T'),
+            'timezone' => config('app.timezone'),
+        ]);
+    }
+
     /**
      * Get system information.
      */
