@@ -4,6 +4,12 @@
 
 This document outlines the performance optimization strategies implemented in Laravel CMS to ensure fast, scalable, and efficient operation.
 
+## 📚 Related Documentation
+- [Main Documentation](README.md) - Complete documentation index
+- [API Documentation](API_DOCUMENTATION.md) - API endpoints and usage
+- [Database Schema](DATABASE_SCHEMA.md) - Database structure and optimization
+- [Deployment Guide](DEPLOYMENT.md) - Production deployment with performance settings
+
 ## Database Optimization
 
 ### Indexes

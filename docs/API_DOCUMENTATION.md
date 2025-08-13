@@ -4,6 +4,12 @@
 
 Laravel CMS provides a comprehensive RESTful API for managing content, users, and system settings. The API follows REST conventions and returns JSON responses.
 
+## 📚 Related Documentation
+- [Main Documentation](README.md) - Complete documentation index
+- [Database Schema](DATABASE_SCHEMA.md) - Database structure and relationships
+- [Deployment Guide](DEPLOYMENT.md) - Production deployment instructions
+- [Performance Guide](PERFORMANCE.md) - Optimization and monitoring
+
 ## Base URL
 
 ```
