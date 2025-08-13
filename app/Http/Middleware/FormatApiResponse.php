@@ -63,7 +63,7 @@ class FormatApiResponse
             // Add common headers
             $response->headers->set('X-API-Version', config('app.api_version', '1.0'));
             $response->headers->set('X-Request-ID', $request->header('X-Request-ID', uniqid()));
-            $response->headers->set('X-Response-Time', round((microtime(true) - LARAVEL_START) * 1000, 2) . 'ms');
+            $response->headers->set('X-Response-Time', round((microtime(true) - ($_SERVER['REQUEST_TIME_FLOAT'] ?? microtime(true))) * 1000, 2) . 'ms');
         }
 
         return $response;

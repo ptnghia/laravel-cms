@@ -52,3 +52,22 @@ type: "manual"
      git add .
      git commit -m "feat: mô tả ngắn gọn thay đổi"
      ```
+## Quy tắc thư mục & tài liệu
+1. **Thư mục `docs/`**
+   - Dùng để lưu trữ toàn bộ tài liệu liên quan đến dự án (hướng dẫn cài đặt, quy tắc code, API docs...).
+   - Sau mỗi lần hoàn thành tính năng hoặc fix bug, nếu có thay đổi liên quan, phải cập nhật file tương ứng trong `docs/`.
+
+2. **Thư mục `script/`**
+   - Chứa các file script dùng để test hoặc hỗ trợ công việc (ví dụ: script tạo dữ liệu giả, script kiểm tra logs...).
+   - Các file script cần được đặt tên rõ ràng, kèm mô tả chức năng ở đầu file.
+
+## Quy tắc Domain dự án
+- Domain đã cấu hình cho dự án là:
+  ```
+  https://laravel-cms.test/
+  ```
+- Thay thế cho domain mặc định của Laravel:
+  ```
+  http://127.0.0.1:8000/
+  ```
+- Khi chạy và kiểm tra dự án, luôn sử dụng domain `https://laravel-cms.test/`.
